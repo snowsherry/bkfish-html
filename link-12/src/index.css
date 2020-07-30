@@ -1,0 +1,287 @@
+@charset "utf-8";
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+html,
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+button,
+input,
+textarea {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+img {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+a {
+    text-decoration: none;
+   /* color: #333;*/
+}
+a,
+a:active,
+button,
+button:active,
+input,
+span,
+textarea,
+select {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+button {
+    background: none;
+    border: none;
+}
+html,
+body {
+    width: 100%;
+    height: 100%;
+    word-break: normal;
+    font-size: .2rem;
+    font-weight: 500;
+    font-family: "Microsoft YaHei";
+    background-color: #570d32;
+}
+
+.container {
+    width: 7.5rem;
+    height: 16.30rem;
+    background: url('./bg.jpg') no-repeat;
+    background-size: 7.5rem 16.30rem;
+    margin: 0 auto;
+    position: relative;
+}
+.top {
+    width: 7.5rem;
+    height: 1.06rem;
+    background: url('') no-repeat;
+    background-size: 7.5rem 1.06rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.logo,
+.top_text,
+.level {
+    display: inline-block;
+    height: 1.06rem;
+    line-height: 1.06rem;
+}
+
+.logo img {
+    height: 1.06rem;
+    margin-left: .25rem;
+    margin-top: -.05rem;
+    vertical-align: middle;
+}
+
+.top_text img {
+    width: 3.3rem;
+    height: .39rem;
+    margin-left: .2rem;
+    vertical-align: middle;
+}
+
+.level img {
+    width: 1.64rem;
+    height: .56rem;
+    margin-left: .9rem;
+    vertical-align: middle;
+}
+
+.download_btn {
+    width: 7.50rem;
+    height: 8.90rem;
+    background: url('./down_btn.png') no-repeat;
+    background-size: 7.50rem 8.90rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.btn {
+    width: 3.28rem;
+    height: 1.14rem;
+    background: url('./btn_03.png') no-repeat;
+    background-size: 3.28rem 1.14rem;
+    position: absolute;
+    top: 7rem;
+    left: 2.3rem;
+    z-index: 2;
+    cursor: pointer;
+    animation: beat 1s linear infinite;
+    -webkit-animation: beat 1s linear infinite;
+}
+
+@keyframes beat {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -moz-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+    }
+}
+
+
+
+.wutu {
+    width: 7.47rem;
+    height: 4.57rem;
+
+    position: absolute;
+    top: 7.05rem;
+}
+
+.swiper-container {
+    width: 7.47rem;
+    height: 4.57rem;
+    border-radius: .3rem;
+
+    -webkit-border-radius: .3rem;
+    -moz-border-radius: .3rem;
+
+    -ms-border-radius: .3rem;
+    -o-border-radius: .3rem;
+
+}
+
+.swiper-slide {
+    width: 7.47rem;
+    height: 4.57rem;
+	margin-top: .02rem;
+    background: url('./img_01_01.png') no-repeat;
+    background-size: 7.47rem 4.57rem;
+    position: absolute;
+   top: 0.8rem;
+    left: 0;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.swiper-slide2 {
+	 width: 4.56rem;
+    height: 3.59rem;
+    background: url('./img_item.png') no-repeat;
+    background-size: 4.56rem 3.59rem;
+    position: absolute;
+    top: 4.5rem;
+    left: 1.5rem;
+    z-index: 1;
+    cursor: pointer;
+
+}
+
+
+.swiper-pagination {
+    position: absolute;
+    left: 2rem;
+    top: 4.5rem;
+}
+
+
+
+.footer {
+    position: absolute;
+    top: 14.4rem;
+}
+.h3 {
+    position: absolute;
+    top: 14.4rem;
+}
+.footer_1 {
+    position: absolute;
+    top: 14.8rem;
+}
+.footer_2 {
+    position: absolute;
+	  left: 0;
+    top: 16rem;
+    padding-bottom: 0.2rem;
+    text-align: center;
+    width: 100%;
+}
+.footer_2 a{ color: #fff;}
+
+.footer p {
+    display: inline-block;
+    width: 7.5rem;
+    margin-left: .05rem;
+    color: #ffa9bd;
+    text-align: center;
+    font-size: .2rem;
+}
+.footer_1 p {
+    display: inline-block;
+    width: 7.5rem;
+    margin-left: .05rem;
+    color: #ffa9bd;
+    text-align: center;
+    font-size: .2rem;
+}
+
+.footer_2 th {
+    display: inline-block;
+    width: 7.5rem;
+    margin-left: .05rem;
+    color: #ffa9bd;
+    text-align: center;
+    font-size: .2rem;
+}
+.footer p a {
+    color: #41ffc3;
+
+}
+.h3 p  {
+    display: inline-block;
+    width: 7.5rem;
+    margin-left: .05rem;
+    color: #ffa9bd;
+    text-align: center;
+    font-size: .2rem;
+}

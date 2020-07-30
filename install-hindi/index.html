@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://theluckyrummy.com/install-hindi/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+
+
+
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+
+    <meta name="x5-orientation" content="portrait">
+
+    <meta name="x5-fullscreen" content="true">
+
+    <meta name="screen-orientation" content="portrait">
+
+    <meta name="full-screen" content="yes">
+
+    <meta name="description" content="लकी रम्मी में मुफ्त रूमी खेलो - भारत में सबसे अच्छा पोकर ऐप">
+
+    <meta name="keywords" content="तीन पट्टी , तीन पट्टी  चिप्स, तीन पट्टी, किशोर पट्टी ऑनलाइन, नि: शुल्क तीन पट्टी, तीन पट्टी खेल, तीन पट्टी नकद, रम्मी, 13 नगदी, रमी नकदी, असली नकदी खेल, कार्ड खेल, मुफ्त कार्ड खेल, मुफ्त रम्मी, रम्मी ऐप रम्मी ऑनलाइन.">
+
+    <title>लकी रमी - Lucky Rummy</title>
+
+    <link href="./src/gl.css" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        @font-face {
+            font-family: "element-icons";
+            src: url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff') format('woff'),
+            url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf ') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        }
+    </style>
+    <script>
+      window.bgdataLayer = window.bgdataLayer || [];
+      function bge(){bgdataLayer.push(arguments);}
+      bge('init', "90596311117631744");
+      bge('event', 'page_view');
+    </script>
+    <script>
+      const isIOS=()=>{
+        let u = navigator.userAgent, isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+        return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+      }
+      const doDownload=(src)=>{
+        var form = document.createElement('form');
+        form.action = src;
+        document.getElementsByTagName('body')[0].appendChild(form);
+        form.submit();
+      }
+      function trackClickInstall(){
+        let src='https://drummycash.higgsyx.com/rummycash/download/luckyrummy.apk';
+        if(isIOS()){
+          alert('कृपया एंड्रॉयड युक्ति फ़ोन का उपयोग करें')
+          return;
+        }
+        document.getElementById('installBtn').innerHTML='डाउनलोडिंग, कृपया पुष्टि करें।';
+        doDownload(src);
+        let key='timestamp';
+        let value=localStorage.getItem(key);
+        if(!value){
+          value=new Date().getTime()+Math.ceil(Math.random()*100);
+          localStorage.setItem(key,value)
+          try {
+            bge('event', 'app_download');
+          }catch (e) {
+
+          }
+          fbq('trackCustom','install_FB_Lucky_Rummy');
+          gtag('event', 'click', {
+            'event_category': 'Install',
+            'event_label': 'install_FB_Lucky_Rummy',
+            'value':value
+          });
+        }
+
+      }
+    </script>
+</head>
+
+
+<body ontouchstart="">
+
+<div class="wp">
+
+    <div class="bd" style="margin-top: 0.4rem;">
+
+        <div class="app">
+
+            <h1 class="logo"><img src="./src/gl_logo.png" alt=""></h1>
+
+            <h2>लकी रमी - Lucky Rummy</h2>
+
+            <h3>लकीरमी एंटरटेनमेंट इंक।</h3>
+
+            <p>100% स्वागत पुरस्कार</p>
+
+
+        </div>
+
+        <ul class="list">
+
+            <li>
+
+                <strong>4.8</strong>
+
+                <p>5000 की समीक्षा</p>
+
+            </li>
+
+            <li>
+
+                <i class="icon-download"></i>
+
+                <p>7.8MB</p>
+
+            </li>
+
+            <li>
+
+                <i class="icon-age"></i>
+
+                <p>18 वर्ष+</p>
+
+            </li>
+
+            <li>
+
+                <strong>5,000,000+</strong>
+
+                <p>डाउनलोड</p>
+
+            </li>
+
+        </ul>
+
+        <a href="javascript:void(0);">
+            <button class="btn" type="button"  id="installBtn" onclick="trackClickInstall()">स्इंस्टॉल</button></a>
+
+        <div class="myswiper swiper-container swiper-container-horizontal">
+
+            <ul class="swiper-wrapper" style="transform: translate3d(32.9167px, 0px, 0px); transition-duration: 0ms;">
+
+                <li class="swiper-slide swiper-slide-active" style="width: 6rem; margin-right:0.4rem;">
+
+                    <img src="./src/lr_img_1.jpg" alt="">
+
+                </li>
+
+                <li class="swiper-slide swiper-slide-next" >
+
+                    <img src="./src/lr_img_2.jpg" alt="">
+
+                </li>
+
+                <li class="swiper-slide" >
+
+                    <img src="./src/lr_img_3.jpg" alt="">
+
+                </li>
+                <li class="swiper-slide" >
+
+                    <img src="./src/lr_img_4.jpg" alt="">
+
+                </li>
+                <li class="swiper-slide" >
+
+                    <img src="./src/lr_img_5.jpg" alt="">
+
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="desc">
+
+            <h3>लकी रम्मी में मुफ्त रूमी खेलो - भारत में सबसे अच्छा पोकर ऐप</h3>
+
+            <p>मस्ती से भरा मुफ्त ऑनलाइन पोकर की दुनिया में प्रवेश करें!<br>
+
+                वास्तविक मनोरंजन का रोमांच महसूस करने के लिए लकी रम्मी में शामिल हों! अपने पोकर बोनस के साथ आगे बढ़ें।<br>
+
+                सर्वश्रेष्ठ पोकर खिलाड़ियों के खिलाफ प्रतिस्पर्धा करें और आप एक सच्चे पोकर स्टार साबित हों!</p>
+
+
+            <strong>अपने पोकर अनुभव को बढ़ाने के लिए अतिरिक्त सुविधाएँ</strong>
+
+            <p>★ पेशेवर: व्यापक पोकर आँकड़े, पोकर टेबल विविधता, सच्चा मल्टीप्लेयर अनुभव।<br>
+
+                ★ मुफ्त बोनस: मुफ्त चिप्स कमाने के लिए अनगिनत अवसर, बड़ा सोचो और पहले से कहीं ज्यादा बड़ा, आसान जीतो!<br>
+
+                ★ प्रगतिशील: एक सहायक बोनस प्रणाली के साथ बहुत उदार पोकर टूर्नामेंट प्रसाद।<br>
+
+                ★ अतुल्य डिजाइन: टॉप-ऑफ-द-लाइन दृश्य इंटरफ़ेस, करो</p>
+
+
+            <p>अद्वितीय सुविधाओं का अनुभव करें और चरम आनंद के लिए लकी रम्मी में विभिन्न प्रकार के गेम मोड का आनंद लें! हमें अपनी किस्मत और कौशल दिखाने के लिए अभी डाउनलोड करें</p>
+
+
+            <strong>संपर्क करें :</strong>
+
+            <p>हम अपने उपयोगकर्ताओं और बेहतरीन गेम अनुभव के लिए सर्वश्रेष्ठ सेवा देने पर गर्व करते हैं। यदि आप हमारे उत्पाद और सेवाओं के बारे में कोई प्रश्न पूछना चाहते हैं, तो कृपया हमसे संपर्क करें:<br>
+                फ़ोन: +917406108946<br>
+                व्हाट्सएप्प:+917406069666<br>
+                पता : S-515, 5th Floor Manipal Centre, No. 47, Mezzanine, Dickenson Road Bangalore<br>
+                Bangalore KA 560042 IN<br>
+                अधिक जानकारी के लिए, कृपया हमारी वेबसाइट पर जाएँ :<br>
+                <a href="http://rummystation.in/" style="color: #3F51B5;font-size: .26rem;">https://theluckyrummy.com</a></p>
+
+
+
+        </div>
+
+
+        <p style="text-align: center; font-size: .26rem;">
+            <a href="./privacypolicy.html" style="color: #3F51B5;font-size: .26rem;">शर्तें, शर्त और गोपनीयता नीति</a>
+
+        </p>
+
+    </div>
+
+</div>
+<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script src="./src/swiper.js"></script>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1.2,
+    centeredSlides: true,
+    spaceBetween: 20
+  });
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function (f, b, e, v, n, t, s){
+    if (f.fbq) return;
+    n = f.fbq = function (){
+      n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window,
+    document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '187797569213226');
+  fbq('track', 'PageView');
+</script>
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRKUDBGUB1J677QU0MK0';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRLI7VOUB1J677QU17I0';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRLI5BOUB1J677QU178G';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BROSTFHEBOCCOHEDK950';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRTHSQITMDUKH1PLG970';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+<noscript>
+    <img height = "1" width = "1" style = "display:none" src = "https://www.facebook.com/tr?id=187797569213226&ev=PageView&noscript=1" alt = ""/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+<!-- <script>
+    var imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+        img.src = img.src + "?ts=" + Date.now();
+    });
+
+</script> -->
+
+
+
+</body></html>

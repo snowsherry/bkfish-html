@@ -1,0 +1,241 @@
+<html style="font-size: 50px;" lang="en"><head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<title>Lucky Rummy</title>
+
+	<link rel="stylesheet" href="./src/index.css">
+	<!-- 移动端适配 1rem = 100px -->
+	<script async="" src="https://connect.facebook.net/en_US/fbevents.js"></script>
+	<script src="./src/analytics.js" async></script>
+	<script>
+  (function(pw, ph) {
+    function setFontSize() {
+      var dw = pw;
+      var docEle = document.documentElement;
+      var cw = docEle.clientWidth || document.body.clientWidth;
+      var ch = docEle.clientHeight || document.body.clientHeight;
+      if (cw > ch) {
+        var dh = ph || 720;
+        var realw = Math.ceil(dh / ch * cw);
+        dw = realw > dw ? realw : dw;
+      }
+      cw = cw > dw ? dw : cw;
+      var fz = cw / dw * 100;
+      docEle.style.fontSize = fz + 'px';
+      var realfz = ~~(+window.getComputedStyle(document.getElementsByTagName("html")[0]).fontSize.replace(
+        'px', '') * 10000) / 10000;
+      if (fz !== realfz) {
+        docEle.style.fontSize = fz * (fz / realfz) + 'px';
+      }
+    }
+
+    setFontSize();
+
+    window.addEventListener('onorientationchange' in window ? 'orientationchange' : 'resize', function() {
+      setTimeout(function() {
+        setFontSize();
+      }, 300);
+    });
+  })(750);
+</script>
+	<script>
+    const isIOS=()=>{
+      let u = navigator.userAgent, isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+      return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    }
+    const doDownload=(src)=>{
+      var form = document.createElement('form');
+      form.action = src;
+      document.getElementsByTagName('body')[0].appendChild(form);
+      form.submit();
+    }
+    function trackClickInstall(){
+      let src='https://drummycash.higgsyx.com/rummycash/download/luckyrummy_40003.apk';
+      if(isIOS()){
+        alert('Please use Android device to install app')
+        return;
+      }
+   /*   document.getElementById('downloadBtn').className='downloading';
+      document.getElementsByClassName('word')[0].innerHTML='Downloading, Plz confirm';*/
+      doDownload(src);
+      let key='timestamp';
+      let value=localStorage.getItem(key);
+      if(!value){
+        value=new Date().getTime()+Math.ceil(Math.random()*100);
+        localStorage.setItem(key,value)
+        fbq('trackCustom','install_FB_Lucky_Rummy');
+        gtag('event', 'click', {
+          'event_category': 'Install',
+          'event_label': 'install_FB_Lucky_Rummy',
+          /* 'value':value*/
+        });
+      }
+
+    }
+	</script>
+	<style type="text/css">
+		@font-face {
+			font-family: "element-icons";
+			src: url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.woff') format('woff'),
+			url('chrome-extension://moombeodfomdpjnpocobemoiaemednkg/fonts/element-icons.ttf ') format('truetype'); /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+		}
+	</style></head>
+
+<body>
+<div class="container">
+	<div class="top">
+
+
+	</div>
+
+	<div class="download_btn"></div>
+
+	<a href="javascript:void(0)">
+
+		<div class="btn" type="button" id="downloadBtn" onclick="trackClickInstall();"></div></a>
+
+
+
+	<div class="wutu">
+		<div class="swiper-container">
+
+			<div class="swiper-slide"></div>
+			<div class="swiper-slide2"></div>
+
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<p>100% Legal, Safe&amp;Secure</p></div>
+	<div class="footer_1">
+		<p>S-515, 5th Floor Manipal Centre, No. 47, Mezzanine, Dickenson Road Bangalore Bangalore KA 560042 IN Copyright 2020 https://theluckyrummy.com All rights reserved</p></div>
+	<div class="footer_2">
+
+
+		<a href="contact_us.html">Contact us /</a>
+		<a href="tc.html">Terms&Conditions /</a>
+		<a href="privacypolicy.html">Privacy Policy</a>
+	</div>
+
+</div>
+
+
+<!-- Facebook Pixel Code -->
+<script>
+  !function (f, b, e, v, n, t, s){
+    if (f.fbq) return;
+    n = f.fbq = function (){
+      n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+    };
+    if (!f._fbq) f._fbq = n;
+    n.push = n;
+    n.loaded = !0;
+    n.version = '2.0';
+    n.queue = [];
+    t = b.createElement(e);
+    t.async = !0;
+    t.src = v;
+    s = b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t, s)
+  }(window,
+    document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '187797569213226');
+  fbq('track', 'PageView');
+
+
+  //定义一个变量，记录点击事件
+
+  /*function trackClickInstall(){
+    fbq('trackCustom','install_FB_Lucky_Rummy');
+    gtag('event', 'click', {
+      'event_category': 'Install',
+      'event_label': 'install_FB_Lucky_Rummy',
+    });
+
+  }*/
+</script>
+
+<noscript>
+	<img height = "1" width = "1" style = "display:none" src = "https://www.facebook.com/tr?id=187797569213226&ev=PageView&noscript=1" alt = ""/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+
+<!--
+<script>
+    var imgs = document.querySelectorAll('img');
+    imgs.forEach(img => {
+        img.src = img.src + "?ts=" + Date.now();
+    });
+
+</script>
+-->
+
+
+<script>
+
+  (function (root) {
+
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRJDMK0UB1J677QTV7O0';
+
+    var s = document.getElementsByTagName('script')[0];
+
+    s.parentNode.insertBefore(ta, s);
+
+  })(window);
+
+</script>
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRKUDBGUB1J677QU0MK0';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRLI7VOUB1J677QU17I0';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRLI5BOUB1J677QU178G';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BROSTFHEBOCCOHEDK950';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+
+<script>
+  (function () {
+    var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
+    ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BRTHSQITMDUKH1PLG970';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ta, s);
+  })();
+</script>
+</body></html>
