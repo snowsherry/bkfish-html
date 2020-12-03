@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://theluckyrummy.com/install/ -->
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no, address=no, email=no">
+  <meta name="x5-orientation" content="portrait">
+  <meta name="x5-fullscreen" content="true">
+  <meta name="screen-orientation" content="portrait">
+  <meta name="full-screen" content="yes">
+  <meta name="description" content="Play FREE RUMMY at Poker DaDa – the best poker app in India">
+  <meta name="keywords" content="teen patti, teen patti chips, 3 patti, teen patti online, free teen patti, teen patti game, teen patti cash, rummy, rummy 13, rummy cash, real cash game, card game, free card game, free rummy, rummy app, rummy online">
+  <title>Poker DaDa</title>
+  <link href="./styles/gl.css" rel="stylesheet" type="text/css">
+  <style type="text/css">
+    .li-top{
+       display: flex;
+      align-items: center;
+      margin-bottom: 0.04rem;
+
+    }
+    .first-li{ width: 22% !important;}
+    .li-top img{ width: 0.4rem; margin-right: 0.06rem;}
+    .li-top .s-img{ width: 0.3rem; margin-right: 0.06rem;}
+    .li-top span{  color: #000000;}
+    .star{ width: 0.2rem; height: 0.2rem; display: inline-block;  background: url("./images/star.png") ; background-size: cover;}
+    .star.half-star{background: url("./images/half-star.png") ; background-size: cover;}
+    .download-btn{ width: 3.16rem; height: 0.8rem; margin: 0.2rem auto; background: url('./images/download.png'); background-size: cover;}
+  </style>
+  <script>
+    const isIOS = () => {
+      let u = navigator.userAgent, isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+      return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    }
+    const doDownload = (src) => {
+      var form = document.createElement('form');
+      form.action = src;
+      document.getElementsByTagName('body')[0].appendChild(form);
+      form.submit();
+    }
+
+    function trackClickInstall() {
+      return;
+      let src = 'https://drummycash.higgsyx.com/rummycash/download/luckyrummy.apk';
+      if (isIOS()) {
+        alert('Please use Android device to install app')
+        return;
+      }
+      document.getElementById('installBtn').innerHTML = 'Downloading, Plz confirm';
+      doDownload(src);
+      let key = 'timestamp';
+      let value = localStorage.getItem(key);
+      if (!value) {
+        value = new Date().getTime() + Math.ceil(Math.random() * 100);
+        localStorage.setItem(key, value)
+        fbq('trackCustom', 'install_FB_Lucky_Rummy');
+        try {
+          bge('event', 'app_download');
+        } catch (e) {
+
+        }
+        gtag('event', 'click', {
+          'event_category': 'Install',
+          'event_label': 'install_FB_Lucky_Rummy',
+          'value': value
+        });
+      }
+
+    }
+  </script>
+</head>
+
+
+<body ontouchstart="">
+<div class="wp">
+  <div class="bd" style="margin-top: 0.4rem;">
+    <div class="app">
+      <h1 class="logo"><img src="./images/icon.png" alt=""></h1>
+      <h2>Poker DaDa</h2>
+      <!-- <h3>Crepoly Technologies Private Limited</h3>-->
+      <h3 style="color: #FEE851; font-weight: bold;">Exclusive Texas Hold'em Poker</h3>
+      <p>The biggest reward mechanism</p>
+    </div>
+    <ul class="list">
+
+      <li  class="first-li">
+        <div class="li-top">
+          <img src="./images/rate.png">
+          <span>Score</span>
+        </div>
+        <p>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star"></span>
+          <span class="star half-star"></span>
+        </p>
+      </li>
+
+      <li>
+        <div class="li-top">
+          <img src="./images/dwn.png" class="s-img">
+          <span>Download</span>
+        </div>
+        <p>7.8MB</p>
+      </li>
+
+      <li>
+        <div class="li-top">
+          <img src="./images/comment.png" class="s-img">
+          <span>Comment</span>
+        </div>
+        <p>5,000+</p>
+      </li>
+
+      <li>
+        <div class="li-top">
+          <img src="./images/player.png" class="s-img">
+          <span>Player</span>
+        </div>
+        <p>5,000,000+`</p>
+      </li>
+    </ul>
+
+    <div class="download-btn"></div>
+
+    <div class="myswiper swiper-container swiper-container-horizontal swiper-container-android">
+
+      <ul class="swiper-wrapper">
+
+        <li class="swiper-slide swiper-slide-active" >
+
+          <img src="./images/pic_1.jpg" alt="">
+
+        </li>
+
+        <li class="swiper-slide swiper-slide-next">
+
+          <img src="./images/pic_2.jpg" alt="">
+
+        </li>
+
+        <li class="swiper-slide">
+
+          <img src="./images/pic_3.jpg" alt="">
+
+        </li>
+       <!-- <li class="swiper-slide">
+
+          <img src="./images/lr_img_4.jpg" alt="">
+
+        </li>
+        <li class="swiper-slide">
+
+          <img src="./images/lr_img_5.jpg" alt="">
+
+        </li>-->
+
+      </ul>
+
+    </div>
+
+    <div class="desc">
+
+      <h3>Play Poker DaDa against millions of players All India and prove your mega poker skills!</h3>
+
+      <p>Poker DaDa is designed to offer the BEST POKER EXPERIENCE POSSIBLE in a hand held device!
+        <br /> Become a Champion in our Top Player Mode and prove that you are better than the rest!
+        <br />Are you up for the challenge? Play now and advance with your poker bonus.
+      </p>
+
+
+      <strong>
+        Additional Features to Enhance your Poker Experience
+      </strong>
+
+      <p>♠ Download for free and enjoy the entire game experience;<br />
+        ♥ One-click access to the poker table, play at any time, saving you a lot of time;<br />
+        ♦ Meet with poker masters from all over India, whether you are a novice with no basic knowledge of the rules, or a poker master, you can find a table suitable for you here;<br />
+        ♣ Gorgeous game scene and interface, enjoy the pleasant game environment;<br />
+        ♠ simulating human visual changes, one finger is enough to control the poker table;<br />
+        ♥ No-limit Texas Hold'em game, try more different game strategies;<br />
+        ♦ Anytime, anywhere, easy to play games without any trouble;<br />
+        ♣ Various achievements and daily tasks, with a richer poker game experience;<br />
+      <p>Everyday win fabulous rewards and have more fun.</p>
+
+
+      <strong>Contact us:</strong>
+      <p>We pride ourselves on giving best service to our users and amazing game experience. If you have any question
+        about our product and services, please contact us:<br>
+        Phone:+917406108946<br>
+        Whatsapp:+917406069666<br>
+        Address: S-515, 5th Floor Manipal Centre, No. 47, Mezzanine, Dickenson Road Bangalore Bangalore KA 560042 IN</p>
+    </div>
+
+
+    <p style="text-align: center; font-size: .26rem;">
+      <a href="./tc.html" style="color: #3F51B5;font-size: .26rem;">Terms, Condition</a>
+      and
+      <a href="./privacypolicy.html" style="color: #3F51B5;font-size: .26rem;">Privacy Policy</a>
+    </p>
+
+  </div>
+
+</div>
+<script src="./swiper.js"></script>
+
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView:2,
+    initialSlide:1,
+    centeredSlides: true,
+    spaceBetween: 10
+  });
+</script>
+</body>
+</html>
