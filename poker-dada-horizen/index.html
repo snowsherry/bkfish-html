@@ -17,7 +17,7 @@
   <link href="./styles/gl.css" rel="stylesheet" type="text/css">
   <style type="text/css">
     .li-top{
-       display: flex;
+      display: flex;
       align-items: center;
       margin-bottom: 0.04rem;
 
@@ -43,6 +43,10 @@
     }
 
     function trackClickInstall() {
+      try {
+        fbq('trackCustom', 'install_FB_Poker_DaDa');
+      } catch (e) {
+      }
       return;
       let src = 'https://drummycash.higgsyx.com/rummycash/download/luckyrummy.apk';
       if (isIOS()) {
@@ -56,17 +60,10 @@
       if (!value) {
         value = new Date().getTime() + Math.ceil(Math.random() * 100);
         localStorage.setItem(key, value)
-        fbq('trackCustom', 'install_FB_Lucky_Rummy');
         try {
-          bge('event', 'app_download');
+          fbq('trackCustom', 'install_FB_Poker_DaDa');
         } catch (e) {
-
         }
-        gtag('event', 'click', {
-          'event_category': 'Install',
-          'event_label': 'install_FB_Lucky_Rummy',
-          'value': value
-        });
       }
 
     }
@@ -81,7 +78,7 @@
       <h1 class="logo"><img src="./images/icon.png" alt=""></h1>
       <h2>Poker DaDa</h2>
       <!-- <h3>Crepoly Technologies Private Limited</h3>-->
-      <h3 style="color: #FEE851; font-weight: bold;">Exclusive Texas Hold'em Poker</h3>
+      <h3 style="color: #FEE851; font-weight: bold; width: 5.2rem;">India Exclusive Texas Hold'em Poker</h3>
       <p>The biggest reward mechanism</p>
     </div>
     <ul class="list">
@@ -131,7 +128,7 @@
 
       <ul class="swiper-wrapper">
 
-        <li class="swiper-slide swiper-slide-active" style="width:300px; margin-right: 20px">
+        <li class="swiper-slide swiper-slide-active" >
 
           <img src="./images/pic_1.jpg" alt="">
 
@@ -148,16 +145,16 @@
           <img src="./images/pic_3.jpg" alt="">
 
         </li>
-       <!-- <li class="swiper-slide">
+        <!-- <li class="swiper-slide">
 
-          <img src="./images/lr_img_4.jpg" alt="">
+           <img src="./images/lr_img_4.jpg" alt="">
 
-        </li>
-        <li class="swiper-slide">
+         </li>
+         <li class="swiper-slide">
 
-          <img src="./images/lr_img_5.jpg" alt="">
+           <img src="./images/lr_img_5.jpg" alt="">
 
-        </li>-->
+         </li>-->
 
       </ul>
 
@@ -187,13 +184,6 @@
         ♣ Various achievements and daily tasks, with a richer poker game experience;<br />
       <p>Everyday win fabulous rewards and have more fun.</p>
 
-
-      <strong>Contact us:</strong>
-      <p>We pride ourselves on giving best service to our users and amazing game experience. If you have any question
-        about our product and services, please contact us:<br>
-        Phone:+917406108946<br>
-        Whatsapp:+917406069666<br>
-        Address: S-515, 5th Floor Manipal Centre, No. 47, Mezzanine, Dickenson Road Bangalore Bangalore KA 560042 IN</p>
     </div>
 
 
@@ -206,11 +196,26 @@
   </div>
 
 </div>
+<!-- Facebook Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '382692039683402');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=382692039683402&ev=PageView&noscript=1"/></noscript>
+<!-- End Facebook Pixel Code -->
 <script src="./swiper.js"></script>
-
 <script>
   var swiper = new Swiper('.swiper-container', {
-    slidesPerView: 1.2,
+    slidesPerView:1.2,
+    initialSlide:1,
     centeredSlides: true,
     spaceBetween: 20
   });
