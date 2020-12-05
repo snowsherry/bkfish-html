@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>上海鲲鱼科技有限公司</title>
+    <link rel="stylesheet" href="src/styles/index.css">
+    <style type="text/css">
+        *{box-sizing: border-box;}
+        body{}
+        .main{ width: 100%; height: auto;}
+        .top{
+            position: relative;
+        }
+        .prize-img{
+            width: 100%;
+        }
+        .text{
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            padding: 0 20%;
+            text-align: center;
+            color: #fff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            box-sizing: border-box;
+        }
+        .title{
+            font-size: 36px;
+            color: #fff;
+            line-height: 45px;
+            margin-bottom: 30px;
+            margin-top: 70px;}
+        .desc{
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .content-box{
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .commom-box{
+            width: 100%;
+            padding-top: 150px;
+        }
+        .commom-box h4{
+            font-size: 50px;
+            font-weight: 700;
+            color: #222;
+            position: relative;
+            padding-bottom: 14px;
+        }
+        .commom-box h4:after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin-left: -34px;
+            background: #ffd503;
+            width: 64px;
+            height: 6px;
+            -webkit-transform: scaleY(.5);
+            transform: scaleY(.5);
+            -webkit-transform-origin: 0 100%;
+            transform-origin: 0 100%;
+        }
+        .commom-box p {
+            color: #666;
+            font-size: 32px;
+            font-weight: 500;
+            margin-top: 50px;
+        }
+        .floor {
+            width: 88%;
+            max-width: 88%;
+            height: auto;
+            margin-top: 52px;
+        }
+        .floor-h5{height: 0;}
+        .footer{
+            text-align: center;
+            background-color: #000;
+            padding: 20px 0 ;
+            color: #999;
+            font-size: 12px;
+        }
+        @media screen and (max-width: 768px) {
+            html{
+                font-size: calc(100vw/3.75);
+            }
+            .text{ padding: 0 10%;}
+            .top{ height: 1.8rem;
+                background: url('./src/images/hd_bg.jpg');
+                background-size: auto 100%;
+                background-position: center center;
+            }
+            .prize-img{ width: 0; height: 0;}
+            .title{
+                margin: 0.1rem 0 0.1rem;
+                line-height: 0.3rem;
+                font-size: 0.2rem;
+            }
+            .desc{ font-size: 0.12rem; line-height: 0.18rem;}
+            .commom-box{ padding-top: 0.6rem;}
+            .commom-box h4{ font-size: 0.3rem;}
+            .commom-box p{ font-size: 0.24rem; margin-top: 0.16rem;}
+            .floor{ width: 0; height: 0; margin: 0; display: none;}
+            .floor-h5{ height: 2rem; margin: 0.3rem auto 0; width: 90%;}
+            .floor-h5.floor-duty{ background: url('./src/images/duty.jpg'); background-size: auto 100%; background-position: center center;}
+            .floor-h5.floor-hope{ background: url('./src/images/hope.jpg'); background-size: auto 100%; background-position: center center;}
+        }
+    </style>
+</head>
+<body>
+<div class="main">
+    <div  class="top">
+        <img  src="./src/images/hd_bg.jpg" alt="" class="prize-img">
+        <div  class="text">
+            <div  class="title">我们的团队</div>
+            <div  class="desc">上海鲲鱼科技有限公司，具有互联网企业的开放与竞争，拥有严谨细致的工作观，以用户至上为使命驱动力。在这里，既有80后的创业领袖，也有从业逾20年的沙场老将；在这里，拥有名校背景的员工比例远超同业。我们相信，给员工最好的福利，就是让他与最优秀的同事们并肩作战。</div>
+        </div>
+    </div>
+    <div class="content-box">
+        <section class="commom-box clearfix">
+            <h4>使命</h4>
+            <p>会员服务提升生活品质</p>
+            <img src="./src/images/duty.jpg" class="floor">
+            <div class="floor-h5 floor-duty" ></div>
+        </section>
+        <section class="commom-box clearfix">
+            <h4>愿景</h4>
+            <p>领先的全球化会员制消费服务平台</p>
+            <img src="./src/images/hope.jpg" class="floor">
+            <div class="floor-h5 floor-hope" ></div>
+        </section>
+    </div>
+    <div class="footer">Copyright@上海鲲鱼科技有限公司 版权所有</div>
+</div>
+</body>
+</html>

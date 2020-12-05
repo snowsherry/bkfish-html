@@ -1,0 +1,508 @@
+<html>
+<head>
+	<title>Lucky Rummy</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="IE=10" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="yes" name="mobile-web-app-capable">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/index.css">
+  <link rel="stylesheet" href="src/css/swiper.min.css">
+  <style type="text/css">
+    body{ font-size: 0.12rem;}
+    .main{ width: 100%; box-sizing: border-box; padding: 0 0.12rem 0.3rem; overflow: hidden;  }
+    .head{ margin:0.22rem auto 0.48rem; }
+    .star{background: url('./src/images/star.png'); background-size: cover; display: inline-block;}
+    .half-star{background: url('./src/images/star-half.png'); background-size: cover; display: inline-block;}
+    .head .head-top{
+      display: flex;
+      justify-content: space-between;
+    }
+    .head .logo{ width: 0.88rem;}
+    .head .desc{ width: 2.4rem;}
+    .head .desc .title{ font-size: 0.18rem; color: #333333; line-height: 0.24rem;}
+    .head .desc .extra{
+      margin-top: 0.14rem;
+      height: 0.2rem;
+    }
+    .head .desc .extra .red{ display: inline-block; float: left; font-size: 0.14rem; line-height: 0.2rem; color: #DE170A;}
+    .head .desc .extra .year-plus{ float: left; width: 0.18rem; margin-left: 0.08rem; margin-top: 0.01rem;}
+    .head .desc .extra .stars{
+      float: right;
+      margin-right: 0.02rem;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .head .desc .extra .stars .star{ width: 0.08rem; height: 0.08rem; margin-right: 0.01rem; float: left; }
+    .head .desc .extra .members{
+      float: right;
+      line-height: 0.2rem;
+      font-size: 0.12rem;
+      color: #666666;
+    }
+    .head .desc .extra .members img{ width: 0.14rem; margin-left: 0.02rem; vertical-align: text-top;}
+    .head .head-bottom{
+      width: 3.36rem;
+      height: 0.5rem;
+      margin: 0.25rem auto 0.48rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(180deg, #FFA69F 0%, #DE170A 100%);
+      border-radius: 25px;
+      font-size: 0.2rem;
+      font-weight: 400;
+      color: #ffffff;
+    }
+    .head-bottom img{
+      width: 0.24rem;
+      margin-left: 0.08rem;
+      }
+    .bottom-line-box{
+        border-bottom: 1px solid #D8D8D8;
+    }
+    .description{
+      transition: height 0.5s;
+      color: #666666;
+    }
+
+    .description p{ font-size: 0.14rem; line-height: 0.16rem; margin-bottom: 0.16rem;}
+    .description .show-part{}
+    .description .hide-part{ display: none;}
+    .description .hide-part.show{ display: block;}
+    .description .read-more{
+      font-size: 0.16rem;
+      text-align: center;
+      line-height: 0.4rem;
+      color: #689F37;
+      margin-bottom: 0.2rem;
+      height: 0.4rem;
+    }
+    .description .read-more.hidden{
+      background: rgba(255,255,255,0.5);
+      margin-top: -0.5rem;
+    }
+    .info-part{
+      color: #666666;
+      font-size: 0.14rem;
+      line-height: 0.18rem;
+    }
+    .info-part .title{
+        font-size: 0.16rem;
+        color: #333333;
+        margin: 0.24rem 0;
+        font-weight: bold;
+    }
+    .info-part .spart{ margin-bottom: 0.2rem;}
+    .info-part .stitle{ font-size: 0.14rem; color: #333333; font-weight: bold; margin-bottom: 0.06rem;}
+    .rate-part{
+      display: flex;
+      justify-content: center;
+      margin-top: 0.24rem;
+      margin-bottom: 0.3rem;
+    }
+    .rate-part  .rate-part-left{
+      /*width: 0.8rem;*/
+      margin-right: 0.2rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+    .rate-part  .rate-part-left .score{
+      color: #333333;
+      font-size: 0.4rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
+    }
+    .rate-part  .rate-part-left .stars{
+        text-align: center;
+        margin-bottom: 0.08rem;
+        margin-top: 0.04rem;
+    }
+    .rate-part  .rate-part-left .stars .star{
+      width: 0.1rem; height: 0.1rem; margin-right: 0.05rem; float: left;
+
+    }
+    .rate-part  .rate-part-left .total{
+      color: #666666;
+      text-align: center;
+      height: 0.16rem; line-height: 0.16rem;
+      font-size: 0.1rem;
+    }
+    .rate-part  .rate-part-left .total img{ width: 0.12rem; vertical-align: text-top; margin-left: 0.05rem; vertical-align: middle;}
+    .rate-part-right{ width: 2.2rem;}
+    .rate-part-right .core-line{ height: 0.12rem; margin-bottom: 0.04rem; color: #888; }
+    .rate-part-right .num{ width: 0.12rem; display: inline-block;}
+     .rate-part-right .core-line .line{  height: 100%;display: inline-block;}
+    .rate-part-right .core-line .l1{ width: 2rem; background: #79C9A2;}
+    .rate-part-right .core-line .l2{ width: 0.8rem;background: #AED888;}
+    .rate-part-right .core-line .l3{ width: 0.4rem;background: #FFD94C}
+    .rate-part-right .core-line .l4{ width: 0.2rem;background: #FFB348}
+    .rate-part-right .core-line .l5{ width: 0.1rem;background: #FF8C5D}
+    .comments{
+
+    }
+    .comment{
+      margin-bottom: 0.2rem;
+      display: flex;
+      /*justify-content: space-between;*/
+    }
+    .comment .avatar{
+      width: 0.4rem;
+      height: 0.4rem;
+      border-radius: 100%;
+      margin-right: 0.1rem;
+      flex: 0 0 auto;
+    }
+    .comment .comment-detail{
+      flex: auto;
+    }
+    .comment .comment-detail .nick{
+      font-size: 0.14rem;
+      color: #333333;
+      line-height: 0.2rem;
+    }
+    .comment .comment-detail .date{
+       margin: 0.12rem 0;
+      display: flex;
+      justify-content: space-between;
+      height: 0.16rem;
+      color: #666666;
+      font-size: 0.12rem;
+
+    }
+    .comment .comment-detail .date .date-time{
+        float: left;
+    }
+    .comment .comment-detail .date-time .star{ display: inline-block; width: 0.08rem; margin-right: 0.01rem; height: 0.08rem;}
+    .comment .comment-detail .date .like-part{
+      float: right;
+    }
+    .comment .comment-detail .date .like-part img{ width: 0.14rem; margin-right: 0.02rem;}
+    .comment .comment-detail .word{
+      color: #666666;
+      font-size: 0.12rem;
+      line-height: 0.16rem;
+    }
+    .what-is-new{ padding-bottom: 0.24rem;}
+    .addition-info{ padding-bottom: 0.1rem;}
+    .link{ color: #DE170A; text-decoration: none;}
+    .slide-box{
+      width: 100%;
+      height: 3.2rem;
+      margin-bottom: 0.3rem;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 0.18rem;
+      /*background: #cc0000;*/
+      color: #000000;
+      width: 1.8rem;
+      border-radius: 0.06rem;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      transition: 300ms;
+      transform: scale(0.9);
+    }
+    .swiper-slide img{ border-radius: 0.04rem;}
+    .swiper-slide-active,.swiper-slide-duplicate-active{
+      transform: scale(1);
+    }
+    .similar-item{
+      float: left;
+      width: 1.4rem;
+      box-sizing: border-box;
+      padding: 0.1rem;
+      background: #FFFFFF;
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.2);
+    }
+    .similar-item .pic{width: 1.2rem; height: 1.2rem; }
+    .similar-item .name{  color: #333333; font-size: 0.12rem; line-height: 0.18rem; margin: 0.1rem 0 0.04rem;}
+    .similar-item .stars{}
+    .similar-item .stars .star{ width: 0.08rem; height: 0.08rem; margin-right: 0.04rem;}
+  </style>
+</head>
+<body>
+  <div class="main">
+      <div class="head">
+        <div class="head-top">
+            <div class="logo"><img src="./src/images/logo.png" width="100%"></div>
+            <div class="desc">
+              <p class="title">Lucky Rummy-Real Players Card Game in India</p>
+              <div class="extra">
+                  <div class="extra-left">
+                    <span class="red">Card</span>
+                    <img src="./src/images/Ic_18+.png" class="year-plus">
+                    <div class="members">
+                      18,870
+                      <img src="./src/images/head.png">
+                    </div>
+                    <div class="stars">
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star"></span>
+                      <span class="star half-star"></span>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+        <div class="head-bottom download-btn" onclick="trackClickInstall()">
+          <span>Install</span>
+          <img src="./src/images/ic_download.png">
+        </div>
+      </div>
+      <div class="slide-box">
+        <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="./src/images/mtxx01.jpg" width="100%" /> </div>
+          <div class="swiper-slide"><img src="./src/images/mtxx02.jpg" width="100%" /> </div>
+          <div class="swiper-slide"><img src="./src/images/mtxx03.jpg" width="100%" /> </div>
+          <div class="swiper-slide"><img src="./src/images/mtxx04.jpg" width="100%" /> </div>
+          <div class="swiper-slide"><img src="./src/images/mtxx05.jpg" width="100%" /> </div>
+        </div>
+      </div>
+      </div>
+      <div class="description bottom-line-box">
+        <div class="show-part">
+          <p>Play the Biggest Indian Free Rummy Card Games on Lucky Rummy - India's Number #1 online Poker and Rummy APP.</p>
+          <p>Now Enjoy the most exciting rummy gaming experience and ultimate poker gameplay on your Android device with India's most trusted Rummy App. Start your exciting Indian card game adventures right away from anywhere, anytime with our app.</p>
+        </div>
+        <div class="hide-part">
+          <p>Check out the Ultimate features you can experience only at Lucky Rummy</p>
+          <p>*Card Game: Play the number 1 free online game and go head-to-head with live players worldwide and also with your friends and family.</p>
+          <p>*Multiple Languages: You have a mind-blowing option of selecting your own language like Hindi, English, Kannada, Telugu etc. On your Mobile card game for better understanding.</p>
+          <p>*Free Chips: Get an endless free chip on your welcome bonus, invitation bonus, Top-Up Cash backs and Share bonus on Lucky Rummy.</p>
+          <p>*Easy Gaming Interface: Under smooth gaming interface and with a new design you feel like playing in an environment similar to a real casino.</p>
+          <p>*Safe and Secured: Real and security available at every point on our Lucky Rummy app with complete digital safety transactions.</p>
+          <p>Download the lucky rummy app now and have the most thrilling online gaming experience.</p>
+          <p>Contact us: <br />
+            We pride ourselves on giving best service to our users and amazing game experience. If you have any question about our product and services, please contact us:
+            <br /><a href="tel:917406108946" >Phone:+917406108946</a>
+            <br />Whatsapp:+917406069666
+            <br />Facebook: <a href="https://www.facebook.com/luckyrummyofficial/" class="link">https://www.facebook.com/luckyrummyofficial/</a>
+          </p>
+
+        </div>
+        <div class="read-more" onclick="toggleShowMore()">READ MORE</div>
+      </div>
+      <div class="reviews info-part bottom-line-box">
+        <p class="title">REVIEWS</p>
+        <div class="rate-part">
+          <div class="rate-part-left">
+              <p class="score">4.7</p>
+              <p class="stars">
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star"></span>
+                <span class="star half-star"></span>
+              </p>
+              <p class="total">
+                <span>75,699 total</span>
+                <img src="./src/images/head.png">
+              </p>
+          </div>
+          <div class="rate-part-right">
+            <div class="core-line">
+              <span class="num">5</span>
+              <span class="line l1"></span>
+            </div>
+            <div class="core-line">
+              <span class="num">4</span>
+              <span class="line l2"></span>
+            </div>
+            <div class="core-line">
+              <span class="num">3</span>
+              <span class="line l3"></span>
+            </div>
+            <div class="core-line">
+              <span class="num">2</span>
+              <span class="line l4"></span>
+            </div>
+            <div class="core-line">
+              <span class="num">1</span>
+              <span class="line l5"></span>
+            </div>
+          </div>
+        </div>
+        <div class="comments">
+          <div class="comment">
+              <div class="avatar"><img src="./src/images/person-1.png" width="100%"></div>
+              <div class="comment-detail">
+                <div class="nick">Nandana Neha</div>
+                <div class="date">
+                  <div class="date-time">
+                    <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+                    <span>10, July 2020</span>
+                  </div>
+                  <div class="like-part">
+                    <img src="./src/images/like.png">
+                    <span>970</span>
+                  </div>
+                </div>
+                <div class="word">Nice game i enjoyed it. It has very nice graphics and it is free from bugs and runs very smoothly.</div>
+              </div>
+          </div>
+          <div class="comment">
+            <div class="avatar"><img src="./src/images/person-2.png" width="100%"></div>
+            <div class="comment-detail">
+              <div class="nick">Kapi Rahul</div>
+              <div class="date">
+                <div class="date-time">
+                  <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span>
+                  <span>09, July 2020</span>
+                </div>
+                <div class="like-part">
+                  <img src="./src/images/like.png">
+                  <span>623</span>
+                </div>
+              </div>
+              <div class="word">अतुल्य खेल,आज बहुत जीता!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div class="what-is-new info-part bottom-line-box">
+      <p class="title">WHAT'S NEW</p>
+      <p>Fresh new UI Improvements. <br />Amazing New Features.</p>
+    </div>
+    <div class="addition-info info-part bottom-line-box">
+      <p class="title">ADDITIONAL INFORMATION</p>
+      <div class="spart">
+        <p class="stitle">Updated</p>
+        <p >12 September 2020</p>
+      </div>
+      <div class="spart">
+        <p class="stitle">Current Version</p>
+        <p>18.01</p>
+      </div>
+      <div class="spart">
+        <p class="stitle">Size</p>
+        <p >22M</p>
+      </div>
+      <div class="spart">
+        <p class="stitle">Requires Android</p>
+        <p >4.1 and up</p>
+      </div>
+      <div class="spart">
+        <p class="stitle">Installs</p>
+        <p >8,000,000+</p>
+      </div>
+      <div class="spart">
+        <p class="stitle">Developer</p>
+        <p >
+          <a href="./terms.html" class="link">Terms & Condition</a>
+          <br /><a href="./policy.html" class="link">Privacy Policy</a>
+          <br />Dickenson Road Bangalore, Bangalore
+        </p>
+      </div>
+    </div>
+    <div class="similar info-part">
+      <p class="title">Smilar</p>
+      <div class="similar-list">
+        <div class="similar-item" onclick="window.location.href='https://dada27.onelink.me/bi7G/6d42af4f'">
+          <div class="pic"><img src="./src/images/dada-logo.png"  width="100%"/></div>
+          <p class="name">Rummy DaDa-Play Fabulous Rummy</p>
+          <div class="stars">
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star"></span>
+            <span class="star half-star"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '187797569213226');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=187797569213226&ev=PageView&noscript=1"/></noscript>
+  <!-- End Facebook Pixel Code -->
+  <script>
+    let key='rummy-lucky-install';
+    let src='https://drummycash.higgsyx.com/rummycash/download/luckyrummy.apk';
+    let eventName='install_FB_Lucky_Rummy';
+    const isIOS=()=>{
+      let u = navigator.userAgent, isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+      return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    }
+    const doDownload=(src)=>{
+      var form = document.createElement('form');
+      form.action = src;
+      document.getElementsByTagName('body')[0].appendChild(form);
+      form.submit();
+    }
+    function trackClickInstall(){
+      if(isIOS()){
+        alert('Please use Android device to install app')
+        return;
+      }
+      /*document.getElementById('installBtn').innerHTML='Downloading, Plz confirm';*/
+      doDownload(src);
+      let value=localStorage.getItem(key);
+      if(!value){
+        value=new Date().getTime()+Math.ceil(Math.random()*100);
+        localStorage.setItem(key,value);
+        try {
+          fbq('trackCustom',eventName);
+        }catch (e) {
+
+        }
+      }
+    }
+  </script>
+  <script src="src/js/swiper.min.js"></script>
+<script>
+  var swiper = new Swiper('.swiper-container', {
+    slidesPerView: 2,
+   /* spaceBetween: 2,*/
+   /* width:180,*/
+    centeredSlides: true,
+    loop: true,
+  });
+  let isShow=false;
+ function  toggleShowMore(){
+    let btnDom=document.getElementsByClassName('read-more')[0];
+    let hideDom=document.getElementsByClassName('hide-part')[0];
+    isShow=!isShow;
+    let html=isShow?'HIDDEN':'READ MORE';
+   btnDom.innerHTML=html;
+   if(isShow){
+     hideDom.classList.add('show')
+   }else{
+     hideDom.classList.remove('show');
+   }
+ }
+</script>
+</body>
+</html>

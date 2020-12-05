@@ -1,0 +1,110 @@
+<html>
+<head>
+	<title>Lucky Rummy</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta content="IE=10" http-equiv="X-UA-Compatible">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<meta content="yes" name="mobile-web-app-capable">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+  <link rel="stylesheet" href="src/css/reset.css">
+  <link rel="stylesheet" href="src/css/index.css">
+  <style type="text/css">
+    body{ font-size: 0.12rem;
+    background: url('./src/images/index.jpg');
+      min-height: 17rem;
+
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+     /* overflow: hidden;*/
+    }
+    @keyframes shake {
+        0%{ transform: rotateZ(0) scale(1);}
+        25%{ transform: rotateZ(-3deg) scale(1.2);}
+        50%{ transform: rotateZ(0) scale(1)}
+        75%{ transform: rotateZ(3deg) scale(1.2)}
+        100%{transform: rotateZ(0) scale(1)}
+    }
+    .main{
+      overflow: hidden;}
+    .download-btn{
+      width: 2.4rem;
+      height: 0.78rem;
+      margin: 9rem auto 0;
+     /* background: #c00;*/
+        background: url("./src/images/install.png");
+        background-size: 100% auto;
+        animation: shake 2s linear infinite;
+    }
+    .desc{
+      box-sizing: border-box;
+      padding:0 0.4rem; font-size: 0.22rem; line-height: 0.26rem; color: #ffffff;
+      margin-top: 4.2rem;
+    }
+    .desc p{ margin-bottom: 0.16rem; text-indent: 2em;}
+    .policy{ text-align: center; font-size: 0.22rem;color: #ffffff;}
+    .policy a{color: #ffffff;}
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="download-btn" onclick="trackClickInstall()"></div>
+    <div class="desc">
+      <p>Users’ privacy is safely protected. Any information of users will not be disclosed to any parties without users’ approval.Services Not  Offered in Assam, Nagaland, Orissa, Sikkim and Telangana</p>
+      <p>Phone: <a href="tel:+917406108946" >+917406108946</a> Whatsapp: +917406069666</p>
+      <p> S-515, 5th Floor Manipal Centre, No. 47, Mezzanine, Dickenson Road Bangalore Bangalore KA 560042 IN Copyright 2020 <a href="https://theluckyrummy.com">https://theluckyrummy.com</a> All rights reserved</p>
+    </div>
+    <p class="policy"><a href="./terms.html">Terms&Conditions</a> <span style="padding: 0 0.1rem;">/</span><a href="./policy.html">Privacy Policy</a></p>
+  </div>
+  <!-- Facebook Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '187797569213226');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=187797569213226&ev=PageView&noscript=1"
+    /></noscript>
+  <!-- End Facebook Pixel Code -->
+  <script>
+    let key='rummy-lucky-install-10.1';
+    let src='https://dcrummy.indfun.com/rummycash/download/luckyrummy.apk';
+    let eventName='install_FB_Lucky_Rummy';
+    const isIOS=()=>{
+      let u = navigator.userAgent, isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //g
+      return !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    }
+    const doDownload=(src)=>{
+      var form = document.createElement('form');
+      form.action = src;
+      document.getElementsByTagName('body')[0].appendChild(form);
+      form.submit();
+    }
+    function trackClickInstall(){
+      if(isIOS()){
+        alert('Please use Android device to install app')
+        return;
+      }
+      /*document.getElementById('installBtn').innerHTML='Downloading, Plz confirm';*/
+      doDownload(src);
+      let value=localStorage.getItem(key);
+      if(!value){
+        value=new Date().getTime()+Math.ceil(Math.random()*100);
+        localStorage.setItem(key,value);
+        try {
+          fbq('trackCustom',eventName);
+        }catch (e) {
+
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
