@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+  <title>Rummy</title>
+  <link   rel="stylesheet" href="src/styles/reset.css">
+  <style type="text/css">
+    html{
+      font-size: calc(100vw / 3.75);
+    }
+    body{
+      background: url("./src/images/bg.png") no-repeat;
+      background-size: 100% auto;
+    }
+    .main{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.1rem 0.2rem 0.2rem;
+    }
+    .top{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto 3.4rem;
+    }
+    .logo{ width: 0.6rem; height: 0.6rem; background: url('./src/images/gr_logo.png'); background-size: cover;}
+    .version{
+      color: #FFFFFF;
+      font-size: 0.22rem;
+      font-weight: bold;
+    }
+    .invite-part{
+
+    }
+    .invite-slogan{
+      text-align: center;
+      color: #FFCFEA;
+      font-size: 0.16rem;
+    }
+    .user-list{
+      margin: 0.2rem auto 0.25rem;
+      height: 0.36rem;
+      display: flex;
+      justify-content: center;
+      /*align-items: center;*/
+    }
+    .user-item{
+      width: 0.36rem;
+      height: 0.36rem;
+      border-radius: 100%;
+     /* overflow: hidden;*/
+      margin-right: 0.2rem;
+      background: #FFFFFF;
+      display: flex;
+    }
+    .user-item img{ width: 100%; height: 100%; padding: 0; margin: 0;}
+    .invite-btn{
+       width: 3.35rem; height: 0.56rem;
+      background: url("src/images/btn.png");
+      background-size: cover;
+      margin: 0.25rem auto 0.4rem;
+    }
+    .record-part{
+        width: 3.32rem ;
+        height: 3.73rem;
+        margin:0 auto 0.4rem;
+        background: url("./src/images/record_bg.png");
+        background-size: 100% auto;
+        box-sizing: border-box;
+        padding: 0.8rem 0.18rem 0.1rem;
+    }
+    .record-li{
+      height: 0.4rem;
+      box-sizing: border-box;
+      padding: 0 0.1rem;
+      font-size: 0.13rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .record-title{
+      background: #FDBBE0;
+      border-radius: 0.04rem;
+      color: #6B0E50;
+      font-weight: bold;
+    }
+    .record-item{
+      border-bottom: 0.01rem solid #FDBBE0;
+      color: #333333;
+    }
+    .record-box{
+       height: 2.4rem;
+       overflow: auto;
+      background: #FFFFFF;
+    }
+    .record-s1{
+      width: 0.8rem;
+      flex: 0 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space:nowrap;
+    }
+    .record-s2{
+      width: 1.2rem;
+      flex: 0 auto;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      word-break: break-all;
+      white-space:nowrap;
+    }
+    .record-s3{
+      flex: 1 auto;
+      text-align: right;
+    }
+    .rule-part{
+      width: 3.32rem ;
+      height: 3.12rem;
+      margin:0 auto ;
+      background: url("./src/images/rules_bg.png");
+      background-size: 100% auto;
+      box-sizing: border-box;
+      padding: 0.8rem 0.18rem 0;
+    }
+    .rule-part p{ line-height: 0.2rem; font-size: 0.14rem; color: #333333; margin-bottom: 0.12rem;}
+  </style>
+</head>
+<body>
+  <div class="main" id="root">
+    <div class="top">
+      <div class="logo"></div>
+      <div class="version">NO. {{versionNo}}</div>
+    </div>
+    <div class="part invite-part">
+      <p class="invite-slogan">Help your friend open the Treasure Box</p>
+      <div class="user-list">
+        <div class="user-item" v-for="(item,k) in userList" :key="k">
+          <img src="./src/images/add_photo.png" />
+        </div>
+      </div>
+      <div class="invite-btn"></div>
+    </div>
+    <div class="part record-part">
+      <div class="record-li record-title">
+        <span class="record-s1">User Name</span>
+        <span class="record-s2">Reward</span>
+        <span class="record-s3">Date</span>
+      </div >
+      <div class="record-box">
+        <div class="record-li record-item" v-for="(item,k) in recordList" :key="item.name">
+          <span class="record-s1">{{item.name}}</span>
+          <span class="record-s2">{{item.title}}</span>
+          <span class="record-s3">{{item.date}}</span>
+        </div >
+      </div>
+    </div>
+    <div class="part rule-part">
+      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
+      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
+      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
+    </div>
+  </div>
+<script src="./src/js/babel.min.js"></script>
+<script src="./src/js/browser.min.js"></script>
+<script src="./src/js/vue.js"></script>
+<script src="./src/js/axios.min.js"></script>
+<script>
+  let  VRoot = new Vue({
+    el: '#root',
+    data: {
+     versionNo:1234566,
+      userList:[1,2,3,4],
+      recordList:[
+        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
+        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
+        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"},
+        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
+        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
+        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"},
+        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
+        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
+        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"}
+      ]
+    },
+  })
+</script>
+</body>
+</html>
