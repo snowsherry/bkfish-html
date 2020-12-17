@@ -43,23 +43,18 @@
     }
 
     function trackClickInstall() {
-      try {
-        fbq('trackCustom', 'install_FB_Poker_DaDa');
-      } catch (e) {
-      }
-      return;
-      let src = 'https://drummycash.higgsyx.com/rummycash/download/luckyrummy.apk';
+      let src = 'http://joingamestech.com/apk/pokerdada_10000.apk';
       if (isIOS()) {
         alert('Please use Android device to install app')
         return;
       }
-      document.getElementById('installBtn').innerHTML = 'Downloading, Plz confirm';
+     /* document.getElementById('installBtn').innerHTML = 'Downloading, Plz confirm';*/
       doDownload(src);
-      let key = 'timestamp';
+      let key = 'FB_Poker_DaDa_key_1';
       let value = localStorage.getItem(key);
       if (!value) {
         value = new Date().getTime() + Math.ceil(Math.random() * 100);
-        localStorage.setItem(key, value)
+        localStorage.setItem(key, value);
         try {
           fbq('trackCustom', 'install_FB_Poker_DaDa');
         } catch (e) {
@@ -122,7 +117,7 @@
       </li>
     </ul>
 
-    <div class="download-btn"></div>
+    <div class="download-btn" onclick="trackClickInstall()"></div>
 
     <div class="myswiper swiper-container swiper-container-horizontal swiper-container-android">
 
