@@ -11,25 +11,116 @@
       font-size: calc(100vw / 3.75);
     }
     body{
-      background: url("./src/images/bg.png") no-repeat;
+      background: url("./src/images/bg_2.png") no-repeat;
       background-size: 100% auto;
+      overflow-x: hidden;
     }
     .main{
       width: 100%;
       box-sizing: border-box;
       padding: 0.1rem 0.2rem 0.2rem;
     }
-    .top{
-      display: flex;
+   /* .top{
+    !*  display: flex;
       justify-content: space-between;
       align-items: center;
-      margin: 0 auto 3.4rem;
-    }
-    .logo{ width: 0.6rem; height: 0.6rem; background: url('./src/images/gr_logo.png'); background-size: cover;}
+      margin: 0 auto 3.4rem;*!
+      position: absolute;
+      left: 0;
+      top:0;
+    }*/
+    .logo{
+       position: absolute;
+      left: 0.15rem;
+      top:0.1rem;
+      width: 0.6rem; height: 0.6rem; background: url('./src/images/gr_logo.png'); background-size: cover;}
     .version{
       color: #FFFFFF;
       font-size: 0.22rem;
       font-weight: bold;
+    }
+    .invite-new-part{
+       margin: 1.1rem auto 0 ;
+    }
+    .invite-flex{
+      display: flex;
+      justify-content: space-between;
+      height: 0.48rem;
+      align-items: center;
+      margin-bottom: 0.15rem;
+    }
+    .invite-flex input{
+        border: none;
+        outline:none;
+        padding: 0.16rem;
+        height: 100%;
+       font-size: 0.18rem;
+      background: #FFFFFF;
+      border-radius: 0.04rem;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .invite-flex-left{
+      width: 0.5rem;
+      flex: 0 0 0.5rem;
+      color: #FFCFEA;
+      font-size: 0.18rem;
+    }
+    .invite-flex-right{
+      flex: 1 1 auto;
+      height: 100%;
+      display: flex;
+    }
+    .invite-no{
+
+
+    }
+    .input-mobile-wrap{
+       width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .input-mobile-wrap input{
+       padding-right: 1rem;
+      display: block;
+    }
+    .send-btn{
+      position: absolute;
+      height: 100%;
+      top:0;
+      line-height: 0.48rem;
+      right: 0.2rem;
+      color: #C70191;
+      font-size: 0.16rem;
+    }
+    .send-btn.grey{
+      color: #999;
+    }
+    .invite-opt{
+       display: flex;
+      justify-content: space-between;
+       align-items: center;
+    }
+    .invite-opt input{
+      width: 1.5rem;
+    }
+    .invite-opt .confirm-btn{
+       width: 1.3rem;
+      height: 0.51rem;
+      background: url("./src/images/Confirm.png");
+      background-size: cover;
+    }
+    .slogan{
+
+      font-size: 0.28rem;
+      /*font-family: Myriad Pro;*/
+      font-weight: 600;
+      color: #FFD34F;
+      line-height: 0.38rem;
+      text-align: center;
+      text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.3);
+   /*   padding: 0 0.4rem;*/
+      box-sizing: border-box;
     }
     .invite-part{
 
@@ -62,9 +153,36 @@
       background-size: cover;
       margin: 0.25rem auto 0.4rem;
     }
+    .bx-list{
+      width: 100%;
+       display: flex;
+      justify-content:space-between;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+    .bx-list img{
+      margin-right: 0.1rem;
+      flex: 1;
+      height: 0.6rem;
+    }
+    .bx-list .bx-0{
+      height: 0.9rem;
+    }
+    .bx-list .bx-2{
+      height: 0.8rem;
+    }
+    .my-record-part{
+      width: 3.32rem ;
+      height: 3.03rem;
+      margin:0 auto 0.4rem;
+      background: url("./src/images/my_record_bg.png");
+      background-size: 100% auto;
+      box-sizing: border-box;
+      padding: 0.8rem 0.18rem 0.1rem;
+    }
     .record-part{
         width: 3.32rem ;
-        height: 3.73rem;
+        height: 3.86rem;
         margin:0 auto 0.4rem;
         background: url("./src/images/record_bg.png");
         background-size: 100% auto;
@@ -117,23 +235,81 @@
     }
     .rule-part{
       width: 3.32rem ;
-      height: 3.12rem;
+      height: 3.68rem;
       margin:0 auto ;
       background: url("./src/images/rules_bg.png");
       background-size: 100% auto;
       box-sizing: border-box;
       padding: 0.8rem 0.18rem 0;
     }
+    .my-record-part .record-box{ height: 1.6rem;}
     .rule-part p{ line-height: 0.2rem; font-size: 0.14rem; color: #333333; margin-bottom: 0.12rem;}
+    .record-f1{
+       flex: 1 0 auto;
+      color: #333333;
+      font-size: 0.14rem;
+      display: flex;
+      align-items: center;
+    }
+    .record-f1 img{ width: 0.24rem; height: 0.24rem; margin: 0 0.1rem; border-radius: 100%; overflow: hidden;}
+    .record-f2{
+      width: 0.88rem;
+      text-align: right;
+      flex: 0 1 auto;
+    }
+    .pop-bg{
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.6);
+      left: 0;
+      top:0;
+      display: none;
+    }
+    .pop-bg.visible{ display: block;}
+    .pop-box{
+      width: 2.84rem;
+      height: 3.15rem;
+      margin: 1.2rem auto 0;
+      position: relative;
+      background: url("./src/images/pop_box.png");
+      background-size: cover;
+    }
+    .pop-box .close{
+       width: 0.31rem;
+      height: 0.32rem;
+      background: url("./src/images/close.png");
+      position: absolute;
+      background-size: cover;
+      right: -0.12rem;
+      top:-0.12rem;
+    }
+    .content-expired .img-div{
+         width: 1.4rem;
+        margin: 0 auto 0.6rem ;
+      padding-top: 0.6rem;
+       height: auto;
+      border: 1px solid transparent;
+      overflow: hidden;
+    }
+    .img-div img{ display: block; margin-top: 0;}
+
+    .content-expired p{
+        color:#FF5AD8;
+        font-size: 0.24rem;
+      /* font-weight: bold;*/
+        text-align: center;
+        text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.3);;
+    }
   </style>
 </head>
 <body>
   <div class="main" id="root">
-    <div class="top">
+   <!-- <div class="top">-->
       <div class="logo"></div>
-      <div class="version">NO. {{versionNo}}</div>
-    </div>
-    <div class="part invite-part">
+     <!-- <div class="version">NO. {{versionNo}}</div>-->
+    <!--</div>-->
+    <!--<div class="part invite-part">
       <p class="invite-slogan">Help your friend open the Treasure Box</p>
       <div class="user-list">
         <div class="user-item" v-for="(item,k) in userList" :key="k">
@@ -141,6 +317,47 @@
         </div>
       </div>
       <div class="invite-btn"></div>
+    </div>-->
+    <div class="part invite-new-part">
+      <div class="invite-flex">
+        <div class="invite-flex-left">NO.</div>
+        <div class="invite-flex-right invite-no">
+          <div class="input-mobile-wrap">
+            <input id="input-mobile"  type="text" placeholder="Phone Number Here" v-model="mobile" maxlength="10"/>
+            <div class="send-btn" :class="{'grey':isCountDown}" @click="sendCode">{{sendTxt}}</div>
+          </div>
+
+        </div>
+      </div>
+      <div class="invite-flex">
+        <div class="invite-flex-left" onclick="window.location.href='www.baidu.com'">OTP</div>
+        <div class="invite-flex-right invite-opt">
+          <input id="input-code"  type="text" placeholder="OTP Here" v-model="code"/>
+          <div class="confirm-btn"></div>
+        </div>
+      </div>
+    </div>
+    <div class="bx-list">
+      <img  v-for="(item,k) in bxList" :src=`./src/images/bx-${item}.png` :class=`bx-${k}`>
+    </div>
+    <p class="slogan">Help your friend <br />open the Treasure Box</p>
+    <div class="invite-btn"></div>
+    <div class="part my-record-part">
+      <div class="record-li record-title">
+        <span class="record-s1">Friends</span>
+        <span class="record-s3">Date</span>
+      </div >
+      <div class="record-box">
+        <div class="record-li record-item" v-for="(item,k) in recordList" :key="item.name">
+          <div class="record-f1">
+            <span>{{k+1}}</span>
+            <img src="">
+            <span>{{item.name}}</span>
+          </div>
+          <div class="record-f2">{{item.date}}</div>
+
+        </div >
+      </div>
     </div>
     <div class="part record-part">
       <div class="record-li record-title">
@@ -157,21 +374,47 @@
       </div>
     </div>
     <div class="part rule-part">
-      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
-      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
-      <p>1. 规则内容描述规则内容描述规则内容描述规则内容描述，规则内容描述规则内容描述规则内容描述。</p>
+      <p>1、As the initiator of the event, you can earn Real Cash by inviting your friends to help you open the Treasure Box. </p>
+      <p>2、You only need to invite 4 friends to open the Treasure Box. You can earn up to Rs1000 per treasure box.</p>
+      <p>3、Every player can open 5 Treasure Box during the event. Player will win an extra surprise Treasure Box with amount up to Rs5000 if he/she achieve the task of opening 5 Treasure Box.</p>
+      <p>4、Friends invited by players should be fresh users. Friends need download Lucky Rummy and register in the application in order to help open the treasure box.</p>
+      <p>5、The event can end any time and the pending rewards cannot be redeemed if event end.</p>
+    </div>
+    <div class="pop-bg" v-show="pop.visible" :class="{'visible':pop.visible}">
+      <div class="pop-box">
+        <div class="close" @click="hidePop"></div>
+        <div class="pop-content content-expired" v-show="pop.type=='expired'">
+         <div class="img-div"><img src="./src/images/expire.png" width="100%"></div>
+          <p>Expired</p>
+        </div>
+        <div class="pop-content content-redeemed" v-show="pop.type=='redeemed'">
+          <img src="./src/images/bx-get2.png" width="100%" />
+        </div>
+      </div>
     </div>
   </div>
 <script src="./src/js/babel.min.js"></script>
 <script src="./src/js/browser.min.js"></script>
+  <script src="src/js/js.cookie.min.js"></script>
 <script src="./src/js/vue.js"></script>
 <script src="./src/js/axios.min.js"></script>
 <script>
+  let countDownInterval=null;
   let  VRoot = new Vue({
     el: '#root',
     data: {
-     versionNo:1234566,
+      token:"",
+      mobile:'',
+      code:'',
+      isCountDown:false,//已发送验证码
+      remainTime:10,
+      versionNo:1234566,
       userList:[1,2,3,4],
+      bxList:['open','expired','get','close'],
+      pop:{
+       visible:false,
+        type:"",
+      },
       recordList:[
         {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
         {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
@@ -184,6 +427,61 @@
         {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"}
       ]
     },
+    mounted(){
+      console.log('mounted');
+      if(Cookies.get('token')){
+        this.token=Cookies.get('token');
+      }else{
+        Cookies.set('token',Math.random(),{expires: 1});
+      }
+      console.log('token',this.token);
+
+    },
+    destroyed(){
+      console.log('222-unmounted');
+      clearInterval(countDownInterval);
+    },
+    computed:{
+        sendTxt(){
+          return this.isCountDown?`${this.remainTime}S`:'Send';
+        }
+    },
+    methods:{
+      verifyMobile(){
+       if( /^[789]\d{9}$/.test(this.mobile)){
+         return true;
+
+       }else{
+         alert("Please enter the right number");
+         return false;
+       }
+      },//验证
+      sendCode(){
+        //验证手机号码合法性
+        if(this.isCountDown) return;
+        if(!this.verifyMobile()) return;
+        this.isCountDown=true;
+        countDownInterval=setInterval(
+          ()=>{
+            if(this.remainTime<=1){
+              this.isCountDown=false;
+              clearInterval(countDownInterval);
+              return;
+            }
+            this.remainTime=this.remainTime-1;
+          },1000
+        )
+      },
+      submit(){
+
+      },
+      hidePop(){
+        this.pop={
+          visible: false,
+          type:""
+        }
+      }
+    }
   })
 </script>
 </body>
