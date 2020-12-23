@@ -440,7 +440,7 @@
   const httpGet=(path,rest)=>{
     return axios.get(baseUrl+path,{...rest})
   }
-
+ const second=10;
   let  VRoot = new Vue({
     el: '#root',
     data: {
@@ -450,7 +450,7 @@
       userId:getQueryVariable('userId'),
       agentId:getQueryVariable('agentId'),
       isCountDown:false,//已发送验证码
-      remainTime:10,
+      remainTime:second,
       versionNo:1234566,
       userList:[1,2,3,4],
       bxList:['open','expired','close','close'],
@@ -478,6 +478,7 @@
       }
       console.log('token',this.token);
       this.initData();
+      this.getList();
     },
     destroyed(){
       console.log('222-unmounted');
@@ -494,6 +495,11 @@
           console.log('res',res);
         })
       },
+      getList(){
+        httpGet('/awardRecord.do',{params:{agentId: this.agentId}}).then(res=>{
+          console.log('awardRecord',res);
+        })
+      },
       verifyMobile(){
        if( /^[789]\d{9}$/.test(this.mobile)){
          return true;
@@ -508,19 +514,38 @@
         if(this.isCountDown) return;
         if(!this.verifyMobile()) return;
         this.isCountDown=true;
-        countDownInterval=setInterval(
-          ()=>{
-            if(this.remainTime<=1){
-              this.isCountDown=false;
-              clearInterval(countDownInterval);
-              return;
+        httpGet('/getOtp.do',{params:{agentId: this.agentId,phoneNum:this.mobile}}).then(res=>{
+            let data=res.data;
+            if(data.code==0){
+              alert('sent');
+              countDownInterval=setInterval(
+                ()=>{
+                  if(this.remainTime<=1){
+                    this.isCountDown=false;
+                    clearInterval(countDownInterval);
+                    this.remainTime=second;
+                    return;
+                  }
+                  this.remainTime=this.remainTime-1;
+                },1000
+              )
+            }else{
+              alert('failed');
             }
-            this.remainTime=this.remainTime-1;
-          },1000
-        )
+        })
+
+
       },
       submit(){
+        httpGet('/help.do',{params:{agentId: this.agentId,phoneNum:this.mobile,opt:this.code,userId:this.userId}}).then(res=>{
+          let data=res.data;
+          if(data.code==0){
+           /* /help.do?agentId=XXX&phoneNum=XXX&opt=XXXX&userId=XXXX*/
 
+          }else{
+            alert(res.data.message)
+          }
+        })
       },
       hidePop(){
         this.pop={
