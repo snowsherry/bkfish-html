@@ -2,22 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58834bd2-3f06-49e7-81ef-8b1e8213c7fb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/Confirm.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bg_2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bx-close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bx-expired.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bx-get.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bx-get2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/bx-open.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/close.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/expire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/my_record_bg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/images/pop_box.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/card-game/src/js/js.cookie.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/card-game/src/images/glod.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/card-game/src/images/rules.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/card-game/src/images/slogan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/card-game/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/card-game/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-game/src/images/record_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/card-game/src/images/record_bg.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/card-game/src/images/rules_bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/card-game/src/images/rules_bg.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/card-game/src/images/Confirm.png" beforeDir="false" afterPath="$PROJECT_DIR$/card-game/src/images/Confirm.png" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,42 +22,43 @@
     <session id="1927502232">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="5" />
+          <entry key="project.closed" value="6" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.19" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.27" value="1" />
           <entry key="project.open.time.3" value="2" />
-          <entry key="project.opened" value="6" />
+          <entry key="project.opened" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="css" value="1" />
+          <entry key="css" value="2" />
           <entry key="html" value="2" />
           <entry key="js" value="5" />
-          <entry key="png" value="13" />
+          <entry key="png" value="17" />
           <entry key="txt" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CSS" value="1" />
+          <entry key="CSS" value="2" />
           <entry key="HTML" value="2" />
-          <entry key="Image" value="13" />
+          <entry key="Image" value="17" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="html" value="5163" />
+          <entry key="html" value="5694" />
           <entry key="txt" value="16" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="5163" />
+          <entry key="HTML" value="5694" />
           <entry key="PLAIN_TEXT" value="16" />
         </counts>
       </usages-collector>
@@ -78,15 +69,37 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/card-game/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="177" column="47" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="47" />
+            <state relative-caret-position="416">
+              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/card-game/src/js/js.cookie.min.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/card-game/src/images/rules.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/card-game/src/images/glod.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/card-game/src/images/slogan.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/card-game/src/styles/reset.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1050">
+              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -114,11 +127,6 @@
           <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/card-game/src/images/Confirm.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -131,15 +139,10 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>input-mobile-wrap</find>
-      <find>flex-left</find>
-      <find>slogan</find>
-      <find>OTP</find>
       <find>invite-btn</find>
       <find>clase</find>
       <find>bx-list</find>
       <find>bxList</find>
-      <find>bx-</find>
       <find>record-part</find>
       <find>record-s1</find>
       <find>record-f1</find>
@@ -147,7 +150,6 @@
       <find>content-expired</find>
       <find>img-div</find>
       <find>expired</find>
-      <find>close</find>
       <find>@click</find>
       <find>sendTxt</find>
       <find>sendCode</find>
@@ -161,6 +163,12 @@
       <find>pop-bg</find>
       <find>visible</find>
       <find>alert</find>
+      <find>close</find>
+      <find>bx-</find>
+      <find>slogan</find>
+      <find>confirm-btn</find>
+      <find>rule</find>
+      <find>rule-title</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -248,8 +256,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\Black Fish\bkfish-html\card-game\src\js" />
       <recent name="E:\Black Fish\bkfish-html\card-game\src\images" />
+      <recent name="E:\Black Fish\bkfish-html\card-game\src\js" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -279,12 +287,13 @@
       <workItem from="1607168095666" duration="32000" />
       <workItem from="1607345567975" duration="285000" />
       <workItem from="1607347091346" duration="6849000" />
-      <workItem from="1608625139322" duration="9901000" />
+      <workItem from="1608625139322" duration="10515000" />
+      <workItem from="1608729033094" duration="2158000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17076000" />
+    <option name="totallyTimeSpent" value="19848000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -301,7 +310,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.20801733" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -318,13 +327,6 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/card-game/src/js/babel.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/card-game/src/styles/reset.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1050">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://D:/Earn/eagle-pay-mobile/src/main/resources/templates/bank-card.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -365,20 +367,17 @@
     <entry file="file://$PROJECT_DIR$/card-game/src/js/axios.min.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/card-game/src/images/Confirm.png">
-      <provider selected="true" editor-type-id="images" />
+    <entry file="file://$PROJECT_DIR$/card-game/src/js/js.cookie.min.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/card-game/src/images/rules_bg.png">
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/expire.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/card-game/src/images/pop_box.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/card-game/src/images/expire.png">
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/rules_bg.png">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/card-game/src/js/js.cookie.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/card-game/src/images/my_record_bg.png">
       <provider selected="true" editor-type-id="images" />
@@ -386,10 +385,32 @@
     <entry file="file://$PROJECT_DIR$/card-game/src/images/record_bg.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/card-game/src/styles/reset.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1050">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/Confirm.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/slogan.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/rules.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card-game/src/images/glod.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/card-game/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="177" column="47" selection-start-line="177" selection-start-column="39" selection-end-line="177" selection-end-column="47" />
+        <state relative-caret-position="416">
+          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

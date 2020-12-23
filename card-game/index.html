@@ -5,7 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1">
   <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <title>Rummy</title>
-  <link   rel="stylesheet" href="src/styles/reset.css">
+  <link  type="text/css" rel="stylesheet" href="src/styles/reset.css">
   <style type="text/css">
     html{
       font-size: calc(100vw / 3.75);
@@ -14,6 +14,7 @@
       background: url("./src/images/bg_2.png") no-repeat;
       background-size: 100% auto;
       overflow-x: hidden;
+      background-color: #84005C;
     }
     .main{
       width: 100%;
@@ -112,15 +113,16 @@
     }
     .slogan{
 
-      font-size: 0.28rem;
-      /*font-family: Myriad Pro;*/
+  /*    font-size: 0.28rem;
+      !*font-family: Myriad Pro;*!
       font-weight: 600;
       color: #FFD34F;
       line-height: 0.38rem;
       text-align: center;
       text-shadow: 0px 2px 11px rgba(0, 0, 0, 0.3);
-   /*   padding: 0 0.4rem;*/
-      box-sizing: border-box;
+   !*   padding: 0 0.4rem;*!
+      box-sizing: border-box;*/
+      text-align: center;
     }
     .invite-part{
 
@@ -168,9 +170,9 @@
     .bx-list .bx-0{
       height: 0.9rem;
     }
-    .bx-list .bx-2{
+  /*  .bx-list .bx-2{
       height: 0.8rem;
-    }
+    }*/
     .my-record-part{
       width: 3.32rem ;
       height: 3.03rem;
@@ -235,12 +237,35 @@
     }
     .rule-part{
       width: 3.32rem ;
-      height: 3.68rem;
+     /* height: 3.68rem;*/
       margin:0 auto ;
-      background: url("./src/images/rules_bg.png");
-      background-size: 100% auto;
+   /*   background: url("./src/images/rules_bg.png");
+      background-size: 100% auto;*/
       box-sizing: border-box;
-      padding: 0.8rem 0.18rem 0;
+      padding: 0.5rem 0.18rem 0;
+      position: relative;
+      border: 0.01rem solid #FF7DD6;
+      border-radius: 0.1rem;
+      background: #FFCFEA;
+
+    }
+    .rule-part .rule-title{
+      width: 1.24rem;
+      height: 0.42rem;
+      position: absolute;
+      left:1.04rem;
+      top:-0.14rem;
+      background: url("./src/images/rules.png");
+      background-size: cover;
+    }
+    .rule-part .rule-gold{
+      position: absolute;
+      width: 0.57rem;
+      height: 0.5rem;
+      right:0.2rem;
+      top:-0.2rem;
+      background: url("./src/images/glod.png");
+      background-size: cover;
     }
     .my-record-part .record-box{ height: 1.6rem;}
     .rule-part p{ line-height: 0.2rem; font-size: 0.14rem; color: #333333; margin-bottom: 0.12rem;}
@@ -340,7 +365,7 @@
     <div class="bx-list">
       <img  v-for="(item,k) in bxList" :src=`./src/images/bx-${item}.png` :class=`bx-${k}`>
     </div>
-    <p class="slogan">Help your friend <br />open the Treasure Box</p>
+    <div class="slogan"><img src="./src/images/slogan.png"   style="width: 3rem;"/></div>
     <div class="invite-btn"></div>
     <div class="part my-record-part">
       <div class="record-li record-title">
@@ -374,6 +399,8 @@
       </div>
     </div>
     <div class="part rule-part">
+      <div class="rule-title"></div>
+      <div class="rule-gold"></div>
       <p>1、As the initiator of the event, you can earn Real Cash by inviting your friends to help you open the Treasure Box. </p>
       <p>2、You only need to invite 4 friends to open the Treasure Box. You can earn up to Rs1000 per treasure box.</p>
       <p>3、Every player can open 5 Treasure Box during the event. Player will win an extra surprise Treasure Box with amount up to Rs5000 if he/she achieve the task of opening 5 Treasure Box.</p>
@@ -400,17 +427,33 @@
 <script src="./src/js/axios.min.js"></script>
 <script>
   let countDownInterval=null;
+  const getQueryVariable=(variable)=>{
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i=0;i<vars.length;i++) {
+      var pair = vars[i].split("=");
+      if(pair[0] == variable){return pair[1];}
+    }
+    return('');
+  };
+  const baseUrl='https://irummycashtest.higgsyx.com/boxActivty';
+  const httpGet=(path,rest)=>{
+    return axios.get(baseUrl+path,{...rest})
+  }
+
   let  VRoot = new Vue({
     el: '#root',
     data: {
       token:"",
       mobile:'',
       code:'',
+      userId:getQueryVariable('userId'),
+      agentId:getQueryVariable('agentId'),
       isCountDown:false,//已发送验证码
       remainTime:10,
       versionNo:1234566,
       userList:[1,2,3,4],
-      bxList:['open','expired','get','close'],
+      bxList:['open','expired','close','close'],
       pop:{
        visible:false,
         type:"",
@@ -428,14 +471,13 @@
       ]
     },
     mounted(){
-      console.log('mounted');
       if(Cookies.get('token')){
         this.token=Cookies.get('token');
       }else{
         Cookies.set('token',Math.random(),{expires: 1});
       }
       console.log('token',this.token);
-
+      this.initData();
     },
     destroyed(){
       console.log('222-unmounted');
@@ -447,6 +489,11 @@
         }
     },
     methods:{
+      initData(){
+        httpGet('/awardInfo.do',{params:{userId:this.userId,agentId: this.agentId}}).then(res=>{
+          console.log('res',res);
+        })
+      },
       verifyMobile(){
        if( /^[789]\d{9}$/.test(this.mobile)){
          return true;
