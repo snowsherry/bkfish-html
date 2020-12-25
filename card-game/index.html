@@ -224,7 +224,7 @@
       white-space:nowrap;
     }
     .record-s2{
-      width: 1.2rem;
+      width: 0.6rem;
       flex: 0 auto;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -348,7 +348,7 @@
         <div class="invite-flex-left">NO.</div>
         <div class="invite-flex-right invite-no">
           <div class="input-mobile-wrap">
-            <input id="input-mobile"  type="text" placeholder="Phone Number Here" v-model="mobile" maxlength="10"/>
+            <input id="input-mobile"  type="text" placeholder="Phone Number Here" v-model="phoneNum" maxlength="11"/>
             <div class="send-btn" :class="{'grey':isCountDown}" @click="sendCode">{{sendTxt}}</div>
           </div>
 
@@ -357,7 +357,7 @@
       <div class="invite-flex">
         <div class="invite-flex-left" onclick="window.location.href='www.baidu.com'">OTP</div>
         <div class="invite-flex-right invite-opt">
-          <input id="input-code"  type="text" placeholder="OTP Here" v-model="code"/>
+          <input id="input-code"  type="text" placeholder="OTP Here" v-model="opt"/>
           <div class="confirm-btn"></div>
         </div>
       </div>
@@ -373,13 +373,13 @@
         <span class="record-s3">Date</span>
       </div >
       <div class="record-box">
-        <div class="record-li record-item" v-for="(item,k) in recordList" :key="item.name">
+        <div class="record-li record-item" v-for="(item,k) in help" :key="item.name">
           <div class="record-f1">
             <span>{{k+1}}</span>
-            <img src="">
-            <span>{{item.name}}</span>
+            <img :src="item.imgUrl">
+            <span>{{item.nickName}}</span>
           </div>
-          <div class="record-f2">{{item.date}}</div>
+          <div class="record-f2">{{formatDateTime(item.time)}}</div>
 
         </div >
       </div>
@@ -392,9 +392,9 @@
       </div >
       <div class="record-box">
         <div class="record-li record-item" v-for="(item,k) in recordList" :key="item.name">
-          <span class="record-s1">{{item.name}}</span>
-          <span class="record-s2">{{item.title}}</span>
-          <span class="record-s3">{{item.date}}</span>
+          <span class="record-s1">{{item.nickName}}</span>
+          <span class="record-s2">{{item.amount}}</span>
+          <span class="record-s3">{{formatDateTime(item.time)}}</span>
         </div >
       </div>
     </div>
@@ -427,6 +427,7 @@
 <script src="./src/js/axios.min.js"></script>
 <script>
   let countDownInterval=null;
+  const userInfoKey='userInfo';
   const getQueryVariable=(variable)=>{
     var query = window.location.search.substring(1);
     var vars = query.split("&");
@@ -439,14 +440,68 @@
   const baseUrl='https://irummycashtest.higgsyx.com/boxActivty';
   const httpGet=(path,rest)=>{
     return axios.get(baseUrl+path,{...rest})
+  };
+  const userInfo=Cookies.get(userInfoKey)||{};
+  const  formatDateTime = function(time){
+      if(!time) return '';
+      var t = new Date(time*1000);
+      var tf = function(i){return (i < 10 ? '0' : '') + i};
+      return "yyyy-MM-dd".replace(/yyyy|MM|dd|HH|mm|ss/g, function(a){
+          switch(a){
+              case 'yyyy':
+                  return tf(t.getFullYear());
+                  break;
+              case 'MM':
+                  return tf(t.getMonth() + 1);
+                  break;
+              case 'mm':
+                  return tf(t.getMinutes());
+                  break;
+              case 'dd':
+                  return tf(t.getDate());
+                  break;
+              case 'HH':
+                  return tf(t.getHours());
+                  break;
+              case 'ss':
+                  return tf(t.getSeconds());
+                  break;
+          }
+      })
+  };
+  const getImageByIndex=(index)=>{
+     const obj=[
+         { url : "", picPath : "rc_rummycash_profil_role_01.png", imgIndex : 1, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_11.png", imgIndex : 2, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_02.png", imgIndex : 3, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_12.png", imgIndex : 4, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_03.png", imgIndex : 5, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_13.png", imgIndex : 6, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_04.png", imgIndex : 7, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_14.png", imgIndex : 8, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_05.png", imgIndex : 9, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_15.png", imgIndex : 10, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_06.png", imgIndex : 11, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_16.png", imgIndex : 12, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_07.png", imgIndex : 13, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_17.png", imgIndex : 14, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_08.png", imgIndex : 15, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_18.png", imgIndex : 16, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_09.png", imgIndex : 17, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_19.png", imgIndex : 18, gender : 0 },
+         { url : "", picPath : "rc_rummycash_profil_role_10.png", imgIndex : 19, gender : 1 },
+         { url : "", picPath : "rc_rummycash_profil_role_20.png", imgIndex : 20, gender : 0 }
+     ]
+      return   `./src/images/avatar/${obj[index-1]['picPath']}`;
   }
  const second=10;
   let  VRoot = new Vue({
     el: '#root',
     data: {
       token:"",
-      mobile:'',
-      code:'',
+      phoneNum:userInfo.phoneNum||'',
+      opt:userInfo.opt||'',
+        hasLogin:userInfo.phoneNum?true:false,
       userId:getQueryVariable('userId'),
       agentId:getQueryVariable('agentId'),
       isCountDown:false,//已发送验证码
@@ -454,21 +509,13 @@
       versionNo:1234566,
       userList:[1,2,3,4],
       bxList:['open','expired','close','close'],
+        box:[],//已开箱的宝贝
+        help:[],
       pop:{
        visible:false,
         type:"",
       },
-      recordList:[
-        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
-        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
-        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"},
-        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
-        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
-        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"},
-        {name:"jayx*数量1222",title:"奖品ICON*数量",date:"2020-10-11"},
-        {name:"jayx*数量2222",title:"奖品ICON*数量数量数量数量",date:"2020-10-11"},
-        {name:"jayx*",title:"奖品ICON*数量",date:"2020-10-11"}
-      ]
+      recordList:[]
     },
     mounted(){
       if(Cookies.get('token')){
@@ -492,18 +539,31 @@
     methods:{
       initData(){
         httpGet('/awardInfo.do',{params:{userId:this.userId,agentId: this.agentId}}).then(res=>{
-          console.log('res',res);
+                let {data,code}=res.data;
+                if(code==0){
+                    let {nickName,help,box}=data;
+                    this.box=box;
+                    this.nickName=nickName;
+                    this.help=help.map(item=>{
+                        item.imgUrl=item.iconUrl?item.iconUrl:getImageByIndex(item.imageIndex);
+                        return item;
+                    });
+                }
+
         })
       },
       getList(){
         httpGet('/awardRecord.do',{params:{agentId: this.agentId}}).then(res=>{
-          console.log('awardRecord',res);
+            let data=res.data.data;
+            let {record}=data;
+            if(record&&record.length>0){
+                this.recordList=record;
+            }
         })
       },
       verifyMobile(){
-       if( /^[789]\d{9}$/.test(this.mobile)){
+       if( /^[789]\d{9}$/.test(this.phoneNum)){
          return true;
-
        }else{
          alert("Please enter the right number");
          return false;
@@ -514,10 +574,15 @@
         if(this.isCountDown) return;
         if(!this.verifyMobile()) return;
         this.isCountDown=true;
-        httpGet('/getOtp.do',{params:{agentId: this.agentId,phoneNum:this.mobile}}).then(res=>{
+        httpGet('/getOtp.do',{params:{agentId: this.agentId,phoneNum:this.phoneNum}}).then(res=>{
             let data=res.data;
             if(data.code==0){
               alert('sent');
+              //缓存用户信息
+                Cookies.set(userInfoKey,JSON.stringify({
+                    phoneNum:this.phoneNum,//当前登录的用户名称
+                    opt:this.opt //opt 一直有效
+                }),{expires: 7})
               countDownInterval=setInterval(
                 ()=>{
                   if(this.remainTime<=1){
@@ -537,13 +602,13 @@
 
       },
       submit(){
-        httpGet('/help.do',{params:{agentId: this.agentId,phoneNum:this.mobile,opt:this.code,userId:this.userId}}).then(res=>{
-          let data=res.data;
-          if(data.code==0){
+        httpGet('/help.do',{params:{agentId: this.agentId,phoneNum:this.phoneNum,opt:this.opt,userId:this.userId}}).then(res=>{
+          let {data,message,code}=res.data;
+          if(code==0){
            /* /help.do?agentId=XXX&phoneNum=XXX&opt=XXXX&userId=XXXX*/
-
+                alert('success');
           }else{
-            alert(res.data.message)
+            alert(res.message)
           }
         })
       },
