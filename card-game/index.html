@@ -579,10 +579,6 @@
             if(data.code==0){
               alert('sent');
               //缓存用户信息
-                Cookies.set(userInfoKey,JSON.stringify({
-                    phoneNum:this.phoneNum,//当前登录的用户名称
-                    opt:this.opt //opt 一直有效
-                }),{expires: 7})
               countDownInterval=setInterval(
                 ()=>{
                   if(this.remainTime<=1){
@@ -607,6 +603,10 @@
           if(code==0){
            /* /help.do?agentId=XXX&phoneNum=XXX&opt=XXXX&userId=XXXX*/
                 alert('success');
+                  Cookies.set(userInfoKey,JSON.stringify({
+                      phoneNum:this.phoneNum,//当前登录的用户名称
+                      opt:this.opt //opt 一直有效
+                  }),{expires: 7})
           }else{
             alert(res.message)
           }
