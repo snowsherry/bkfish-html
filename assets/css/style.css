@@ -41,3 +41,111 @@
 .info.error,.apply-submit-tip.error{
   color: #F21D37 !important;
 }
+
+.price-list{
+
+}
+.price-list p{margin-bottom: 0; line-height: 100%;}
+.price-list-header{
+    display: flex;
+    background: #10C98F;
+    border-radius: 10px 10px 0px 0px;
+}
+.price-list-header-item{
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+
+}
+.price-list-header-item .txt{
+  font-size: 16px;
+  font-family: Chivo-Regular, Chivo;
+  font-weight: 400;
+  color: #FFFFFF;
+  line-height: 20px;
+  margin-bottom: 6px;
+}
+.price-list-header-item .title{
+  font-size: 28px;
+  font-family: Chivo-Bold, Chivo;
+  font-weight: bold;
+  color: #FFFFFF;
+  line-height: 36px;
+}
+.price-list-body{
+  display: flex;
+  background: #F9F9FF;
+  border-radius: 10px;
+}
+.price-list-body-list{
+  flex: 1 1 auto;
+  position: relative;
+}
+.price-list-body-list:not(:last-child)::after{
+  content: "";
+  width: 1px;
+  height: calc( 100% - 80px );
+  background: #E8E8EE;;
+  position: absolute;
+  right: 0;
+  top:40px;
+}
+
+.price-list-body-list-item{
+  height: 85px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 22px;
+  font-family: Chivo-Regular, Chivo;
+  font-weight: 400;
+  color: #2D2D2D;
+  line-height: 27px;
+}
+
+@media screen and (max-width: 768px) {
+    .price-list-header{
+      background: #10C98F;
+      border-radius: 5px 5px 0px 0px;
+    }
+  .price-list-header-item{
+    height: 60px;
+  }
+  .price-list-header-item .txt{
+    font-size: 8px;
+    font-family: Chivo-Regular, Chivo;
+    font-weight: 400;
+    color: #FFFFFF;
+    line-height: 10px;
+    transform: scale(0.8);
+    transform-origin: center center;
+  }
+  .price-list-header-item .title{
+    font-size: 12px;
+    font-family: Chivo-Bold, Chivo;
+    font-weight: bold;
+    color: #FFFFFF;
+    line-height: 14px;
+  }
+  .price-list-body-list-item{
+    height: 50px;
+    font-size: 11px;
+    font-family: Chivo-Regular, Chivo;
+    font-weight: 400;
+    color: #2D2D2D;
+    line-height: 13px
+  }
+  .price-list-body-list:not(:last-child)::after{
+    content: "";
+    width: 1px;
+    height: calc( 100% - 48px );
+    background: #E8E8EE;;
+    position: absolute;
+    right: 0;
+    top:24px;
+  }
+}
