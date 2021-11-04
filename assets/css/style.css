@@ -72,7 +72,7 @@
   opacity: 0.9;
 }
 .price-list-header-item .title{
-  font-size: 28px;
+  font-size: 26px;
   font-family: Chivo-Bold, Chivo;
   font-weight: bold;
   color: #FFFFFF;
@@ -80,7 +80,7 @@
   text-align: center;
 }
 .price-list-header-item .title.small{
-  font-size: 24px;
+  font-size: 22px;
 }
 .price-list-body{
   display: flex;
@@ -109,7 +109,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-family: Chivo-Regular, Chivo;
   font-weight: 400;
   color: #2D2D2D;
