@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -13505,6 +13506,9 @@ a.text-dark:hover, a.text-dark:focus {
   .global-color {
     background-color: #ff8009 !important;
   }
+  .collapse:not(.show) {
+    display: none !important;
+  }
 </style>
 
 </head>
@@ -13832,6 +13836,9 @@ a.text-dark:hover, a.text-dark:focus {
     $('.dropdown').on("click",function(){
       $(this).find('.dropdown-toggle').toggleClass('rotateDeg');
       $(this).find('.dropdown-menu').toggleClass('show');
+    })
+    $(".navbar-toggler").on("click",function() {
+      $("#navbarNavDropdown").toggleClass('show');
     })
   })
 </script>
