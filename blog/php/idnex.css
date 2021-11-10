@@ -1,0 +1,60 @@
+.site{
+    padding:0 0 !important;
+    max-width:none !important;
+}
+.site-branding{
+    float:none
+}
+.site-title{
+    font-family: Montserrat-Regular, Montserrat;
+    font-size: 38px;
+    font-weight: 400;
+    color: #222;
+    padding: 120px 0 110px;
+}
+.site-title a:before{
+    content:"";
+    display:inline-block;
+    vertical-align:middle;
+    background-color: #222222;
+    width: 70px;
+    margin: 0 25px;
+    height: 3px;
+}
+
+.site-title a:after{
+    content:"";
+    display:inline-block;
+    vertical-align:middle;
+    line-height:100%;
+    background-color: #222222;
+    width: 70px;
+    margin: 0 25px;
+    height: 3px;
+
+}
+.site-content{
+    padding: 0 120px 60px;
+}
+.entry-title{
+    font-size: 30px !important;
+    font-weight:400;
+}
+.header-main{
+    padding :50px 0 0 0 !important;
+}
+html{ margin-top: 0 !important;}
+article .entry-title{ font-weight:bold;}
+.entry-content{ font-size:14px!important;}
+.comment-reply-title span{ font-size:18px;}
+.comment-form p{margin:1em 0;}
+.comment-notes,.comment-form-comment{ margin:1em 0;}
+.comment-notes span,.comment-form label,.comment-form textarea,.comment-form input{ font-size:15px;}
+#primary{
+    max-width:calc(800px + 4em);
+}
+@media screen and (max-width:375px){
+    .site-title a:before,.site-title a:after{
+        width:60px; margin:0 12px;
+    }
+}
